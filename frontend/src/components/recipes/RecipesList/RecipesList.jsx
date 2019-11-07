@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HistoryIcon from '@material-ui/icons/History';
 import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import { useStyles } from './useStyles';
 import {
   Button,
@@ -41,14 +42,17 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
                       {current.description}
                     </Typography>
                   </div>
-
-                  <IconButton onClick={() => removeRecipe(_id)}>
-                    <DeleteIcon />
-                  </IconButton >
                 </ExpansionPanelSummary>
 
                 {/* HISTORY */}
                 <ExpansionPanelDetails className={classes.panel}>
+                  <Divider />
+
+                  {/* Actions */}
+                  <div className={classes.actionButtons}>
+                    <Typography>Remove recipe: <IconButton className={classes.action} onClick={() => removeRecipe(_id)}><DeleteIcon /></IconButton ></Typography>
+                    <Typography>Modify recipe: <IconButton className={classes.action} onClick={() => {}}><EditIcon /></IconButton ></Typography>
+                  </div>
                   <Divider />
 
                   {/* History elements */}

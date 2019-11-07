@@ -28,5 +28,11 @@ export const useStyles = makeStyles(theme => ({
   },
   mt20: {
     marginTop: 20
+  },
+  actionButtons: {
+
+  },
+  action: {
+
   }
 }));
