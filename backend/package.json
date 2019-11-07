@@ -2,9 +2,9 @@
   "name": "recipy-application-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=prod nodemon index.js",
+    "start": "cross-env NODE_ENV=prod nodemon server.js",
     "test": "cross-env NODE_ENV=test jest --watch"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
+    "faker": "^4.1.0",
     "jest": "^24.9.0",
     "nodemon": "^1.19.4",
     "supertest": "^4.0.2"
