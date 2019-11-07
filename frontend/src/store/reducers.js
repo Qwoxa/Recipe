@@ -23,9 +23,13 @@ export default (state = initialState, action) => {
       };
 
     case types.GET_RECIPES_SUCCESS:
-    case types.MODIFY_RECIPE_SUCCESS:
       return {
         recipes: action.payload,
+        loading: false
+      };
+    case types.MODIFY_RECIPE_SUCCESS:
+      return {
+        recipes: state.recipes.map(r => r._id === action.payload._id ? action.payload : r),
         loading: false
       };
 

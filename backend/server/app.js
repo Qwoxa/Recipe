@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const routes = require("./routes");
 const helpers = require("./helpers");
 
@@ -29,6 +30,7 @@ const app = express();
 // Middlewares
 if (!NODE_ENV === "test") app.use(morgan("dev"));
 app.use(bodyParser.json());
+app.use(cors());
 
 // Routes
 app.use("/api/recipes", routes.recipes);

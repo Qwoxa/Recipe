@@ -14,7 +14,7 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <header className={classes.root}>
+    <header data-test="headerComponent" className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.heading}>
@@ -23,9 +23,9 @@ const Header = () => {
             </Link>
           </Typography>
 
-          <CustomLink to="/">Recipes</CustomLink>
+          <CustomLink data-test="link" to="/">Recipes</CustomLink>
 
-          <CustomLink to="/add">Add recipe</CustomLink>
+          <CustomLink data-test="link" to="/add">Add recipe</CustomLink>
         </Toolbar>
       </AppBar>
     </header>
