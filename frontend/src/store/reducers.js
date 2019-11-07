@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
 
     case types.REMOVE_RECIPE_SUCCESS:
       return {
-        recipes: state.recipes.filter(r => r._id !== payload._id),
+        recipes: state.recipes.filter(r => r._id !== action.payload._id),
         loading: false
       };
 
