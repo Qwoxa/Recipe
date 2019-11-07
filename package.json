@@ -1,0 +1,21 @@
+{
+  "name": "recipy-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-packages": "npm install && npm install --prefix ./frontend && npm install --prefix ./backend",
+    "start-dev": "concurrently \"npm:start --prefix backend\" \"npm:start --prefix frontend\"",
+    "start-prod": "concurrently \"npm:start --prefix backend\" \"serve frontend/build\"",
+    "build": "npm run build --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  },
+  "dependencies": {
+    "build": "^0.1.4"
+  }
+}
