@@ -1,9 +1,14 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { CssBaseline } from "@material-ui/core";
+import Header from "../header";
 
 const App = () => (
-  <h1>
-    Hello, World!
-  </h1>
+  <Router>
+    <CssBaseline>
+      <Header />
+    </CssBaseline>
+  </Router>
 );
 
 export default App;
