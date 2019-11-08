@@ -66,7 +66,6 @@ const AddRecipe = ({ addRecipe }) => {
                 fullWidth
                 variant="contained"
                 color="primary"
-                className={classes.submit}
               >
                 Add Recipe
             </Button>

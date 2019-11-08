@@ -29,6 +29,8 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
         recipes.map(({ _id, versions, createdDate }) => {
           const current = versions[0];
           const history = versions.slice(1);
+          const theLast = versions.slice(-1);
+          console.log(theLast);
 
           return (
             <div key={_id} className={classes.root}>
@@ -93,7 +95,7 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
                       <i>Recipe created</i>
                     </Typography>
                     {history.length === 0 && <Button disabled variant="outlined">Current</Button>}
-                    {history.length !== 0 && <Button variant="outlined">Revert</Button>}
+                    {history.length !== 0 && <Button onClick={() => modifyRecipe({ name: theLast.name, description: theLast.description, id: _id })} variant="outlined">Revert</Button>}
                   </div>
                 </ExpansionPanelDetails>
               </ExpansionPanel>

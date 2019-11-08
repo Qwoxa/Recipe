@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { CssBaseline } from "@material-ui/core";
 import Header from "../header";
 import Recipes from '../recipes';
-import CreateRecipe from '../addRecipe';
+import CreateRecipe from '../createRecipe';
 
 const App = () => (
   <div data-test="appComponent">
