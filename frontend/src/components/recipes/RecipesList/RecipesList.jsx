@@ -13,6 +13,7 @@ import {
   ExpansionPanelSummary,
   ExpansionPanelDetails
 } from '@material-ui/core';
+import ModifyModal from '../ModifyModal/ModifyModal';
 
 
 const formatDate = dateStr => {
@@ -22,6 +23,8 @@ const formatDate = dateStr => {
 
 const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
   const classes = useStyles();
+  const [dialogIsOpen, setOpenDialog] = React.useState(false);
+  const [modifiedRecipe, setModifiedRecipe] = React.useState({});
 
   return (
     <>
@@ -34,6 +37,13 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
 
           return (
             <div key={_id} className={classes.root}>
+              <ModifyModal
+                modifiedRecipe={modifiedRecipe}
+                modifyRecipe={modifyRecipe}
+                setOpen={setOpenDialog}
+                open={dialogIsOpen}
+              />
+
               <ExpansionPanel>
                 <ExpansionPanelSummary
                   expandIcon={<HistoryIcon />}
@@ -53,7 +63,10 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
                   {/* Actions */}
                   <div className={classes.actionButtons}>
                     <Typography>Remove recipe: <IconButton className={classes.action} onClick={() => removeRecipe(_id)}><DeleteIcon /></IconButton ></Typography>
-                    <Typography>Modify recipe: <IconButton className={classes.action} onClick={() => {}}><EditIcon /></IconButton ></Typography>
+                    <Typography>Modify recipe: <IconButton className={classes.action} onClick={() => {
+                      setModifiedRecipe({ id: _id, ...current });
+                      setOpenDialog(true);
+                    }}><EditIcon /></IconButton ></Typography>
                   </div>
                   <Divider />
 
