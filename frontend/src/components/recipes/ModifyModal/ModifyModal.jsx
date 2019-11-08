@@ -23,9 +23,10 @@ const ModifyModal = ({ open, setOpen, modifyRecipe, currentRecipe }) => {
 };
 
 ModifyModal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
   modifyRecipe: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  currentRecipe: PropTypes.object.isRequired
 };
 
 export default ModifyModal;

@@ -23,7 +23,10 @@ const formatDate = dateStr => {
 const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
   const classes = useStyles();
   const [dialogIsOpen, setOpenDialog] = React.useState(false);
-  const [modifiedRecipe, setModifiedRecipe] = React.useState({});
+  const [modifiedRecipe, setModifiedRecipe] = React.useState({
+    name: "",
+    description: ""
+  });
 
   return (
     <>
@@ -32,12 +35,11 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
           const current = versions[0];
           const history = versions.slice(1);
           const theLast = versions.slice(-1);
-          console.log(theLast);
 
           return (
             <div key={_id} className={classes.root}>
               <ModifyModal
-                modifiedRecipe={modifiedRecipe}
+                currentRecipe={modifiedRecipe}
                 modifyRecipe={modifyRecipe}
                 setOpen={setOpenDialog}
                 open={dialogIsOpen}
