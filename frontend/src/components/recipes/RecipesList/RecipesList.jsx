@@ -87,14 +87,15 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
 
                   {/* History elements */}
                   {history.map((snapshot, i) => {
-                    const isLast = i === 0;
-                    const prev = isLast ? current : history[i - 1];
+                    const isInitial = i === 0;
+                    const prev = isInitial ? current : history[i - 1];
                     const changedName =
                       snapshot.name === prev.name ? "" : prev.name;
                     const changedDesc =
                       snapshot.description === prev.description
                         ? ""
                         : prev.description;
+
                     return (
                       <React.Fragment key={snapshot._id}>
                         <div className={classes.historyContainer}>
@@ -122,7 +123,7 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
                               )}
                             </>
                           </Typography>
-                          {!isLast && (
+                          {!isInitial && (
                             <Button
                               onClick={() =>
                                 modifyRecipe({
@@ -136,7 +137,7 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
                               Revert
                             </Button>
                           )}
-                          {isLast && (
+                          {isInitial && (
                             <Button disabled variant="outlined">
                               Current
                             </Button>
@@ -163,8 +164,8 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
                       <Button
                         onClick={() =>
                           modifyRecipe({
-                            name: theLast.name,
-                            description: theLast.description,
+                            name: theLast[0].name,
+                            description: theLast[0].description,
                             id: _id
                           })
                         }
