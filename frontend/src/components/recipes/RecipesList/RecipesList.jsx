@@ -126,8 +126,8 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
                             <Button
                               onClick={() =>
                                 modifyRecipe({
-                                  name: snapshot.name,
-                                  description: snapshot.description,
+                                  name: prev.name,
+                                  description: prev.description,
                                   id: _id
                                 })
                               }
