@@ -1,21 +1,18 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Container, Typography } from '@material-ui/core';
-import RecipesList from './RecipesList';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { Container, Typography } from "@material-ui/core";
+import RecipesList from "./RecipesList";
 
-const Recipes = ({
-  recipes,
-  getRecipes,
-  modifyRecipe,
-  removeRecipe
-}) => {
+const Recipes = ({ recipes, getRecipes, modifyRecipe, removeRecipe }) => {
   useEffect(() => {
     getRecipes();
   }, [getRecipes]);
 
   return (
     <Container>
-      <Typography style={{ marginTop: 30 }} variant="h3">Recipes</Typography>
+      <Typography style={{ marginTop: 30 }} variant="h3">
+        Recipes
+      </Typography>
       <RecipesList
         recipes={recipes}
         modifyRecipe={modifyRecipe}

@@ -1,21 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
-import { Container, Typography } from '@material-ui/core';
-import Form from './Form';
-
+import React from "react";
+import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
+import { Container, Typography } from "@material-ui/core";
+import Form from "./Form";
 
 const AddRecipe = ({ createRecipe }) => {
   const history = useHistory();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     await createRecipe(data);
-    history.push('/');  
+    history.push("/");
   };
 
   return (
     <Container>
-      <Typography style={{ marginTop: 30 }} variant="h3">Add recipe</Typography>
+      <Typography style={{ marginTop: 30 }} variant="h3">
+        Add recipe
+      </Typography>
 
       <Form onSubmit={onSubmit} />
     </Container>

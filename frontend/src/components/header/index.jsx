@@ -23,9 +23,13 @@ const Header = () => {
             </Link>
           </Typography>
 
-          <CustomLink data-test="link" to="/">Recipes</CustomLink>
+          <CustomLink data-test="link" to="/">
+            Recipes
+          </CustomLink>
 
-          <CustomLink data-test="link" to="/add">Add recipe</CustomLink>
+          <CustomLink data-test="link" to="/add">
+            Add recipe
+          </CustomLink>
         </Toolbar>
       </AppBar>
     </header>

@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-import { Button, TextField } from '@material-ui/core';
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
+import { Button, TextField } from "@material-ui/core";
 
 const FormComponent = ({ initialValues, onSubmit }) => (
   <Formik
@@ -46,7 +46,13 @@ const FormComponent = ({ initialValues, onSubmit }) => (
             )}
           </Field>
 
-          <Button type="submit" style={{ padding: 10, marginTop: 10, marginBottom: 10 }} fullWidth variant="contained" color="primary">
+          <Button
+            type="submit"
+            style={{ padding: 10, marginTop: 10, marginBottom: 10 }}
+            fullWidth
+            variant="contained"
+            color="primary"
+          >
             Submit
           </Button>
         </Form>
