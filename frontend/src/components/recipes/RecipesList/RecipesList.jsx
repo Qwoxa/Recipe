@@ -90,11 +90,11 @@ const RecipesList = ({ recipes, modifyRecipe, removeRecipe }) => {
                     const isLast = i === 0;
                     const prev = isLast ? current : history[i - 1];
                     const changedName =
-                      snapshot.name === prev.name ? "" : snapshot.name;
+                      snapshot.name === prev.name ? "" : prev.name;
                     const changedDesc =
                       snapshot.description === prev.description
                         ? ""
-                        : snapshot.description;
+                        : prev.description;
                     return (
                       <React.Fragment key={snapshot._id}>
                         <div className={classes.historyContainer}>

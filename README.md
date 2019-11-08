@@ -1,5 +1,6 @@
 # Recipe application
 
+
 ## Get started
 1. Clone the repo
 ```bash
@@ -25,3 +26,5 @@ npm run build
 ```bash
 npm run start-prod
 ```
+
+Required DB: Mongo.
